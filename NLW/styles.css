@@ -1,0 +1,185 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+ul{
+    list-style: none;
+    
+}
+
+body{
+    background-image: url(./ASSETS/bg.jpg); 
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #000000;
+}
+body * {
+    
+    font-family: 'inter', sans-serif;
+    line-height: 160%;
+}
+
+header{
+    padding-top: 32px;
+    height: calc(120 + 32px);
+
+}
+
+header div{
+    width: 120px; /*Altura de 120px*/
+    margin: auto;
+    background-image: linear-gradient(90deg, rgb(108, 134, 25) 0%,rgb(233, 203, 93) 35.52%, rgb(242, 14, 14) 75.52%, rgb(234, 110, 8) 100%);
+   
+    border-radius: 70px;
+
+    display: flex; /*Quando usado apenas com um alemento alinha um acima do outro e nao um ao lado do outro*/
+    padding: 4px;
+
+    transition: transform .5s;
+
+}
+
+header div:hover{ /*Div+Hover = so vai acontecer algo quando passar o mouse por cima do objeto que esta dentro da div*/
+    transform: scale(1.1); 
+
+
+}
+
+header img{
+    width: 120px;
+    border-radius: 50%;
+
+}
+
+main{
+    max-width: 500px;
+    width: 90%;
+    margin: auto;
+
+    display: grid;
+    gap: 24px;
+
+    margin-top: 32px;
+}
+
+section{
+    color: rgb(246, 247, 251);
+    background-image: linear-gradient(90deg, rgb(108, 134, 25) 0%,rgb(233, 203, 93) 35.52%, rgb(242, 14, 14) 75.52%, rgb(234, 110, 8) 100%);
+    padding-top: 8px;
+    border-radius: 18px;
+
+}
+
+section div{
+    background-color: #302f2f;
+    padding: 32px;
+    padding-top: 2px;
+    border-radius: 8px;   
+
+}
+
+section h2{
+   
+    letter-spacing: -0.47px;
+}
+
+section p{
+    letter-spacing: -0.18px;
+
+}
+
+section ul {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-top: 22px;
+}
+
+section ul li{
+    transition: transform .3s; /* tempo que animação vai durar */
+
+}
+
+section ul li:hover{ /*Animação de todos os meus ul li passando o mouse*/
+    transform: scale(1.1);
+}
+
+
+.receita-list img{
+    width: 100px;
+    border-radius: 8px;
+    
+}
+
+.channel-list img {
+
+    border-radius: 50%;
+    width: 70px;
+        
+}
+
+.social-list img{
+    border-radius: 50%;
+    width: 70px;
+  
+}
+
+header div{
+    animation: fromTop .9s 1s backwards; /*Animação vem de cima e demora 0.8s para descer */
+}                                    /*(backwards executa header div e @keyframes juntos)*/
+
+
+main section{
+    animation: fromCards 7s;
+}
+
+main section:nth-child(1){ /*Estou dizendo= main pegue o filho de numero 1 ou seja pegue meu primeiro "section" */
+    animation-delay: .2s;
+}
+
+main section:nth-child(2){
+    animation-delay: .2s;
+}
+
+main section:nth-child(3){
+    animation-delay: .2s;
+
+    
+}
+
+/*Animação*/
+
+@keyframes fromTop{ /* onde será feito a animação fromTop = parte de cima site header*/
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    } /* de onde */
+ 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+
+    } /* ate onde ( Quando tamanho da minha animação)*/
+}
+
+
+@keyframes fromCards {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    } 
+ 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    } 
+
+}
+
